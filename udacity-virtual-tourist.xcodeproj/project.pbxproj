@@ -15,6 +15,8 @@
 		D4A506291DDA37D60049E4C6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D4A506281DDA37D60049E4C6 /* .gitignore */; };
 		D4A5062B1DDA58980049E4C6 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */; };
 		D4E974C61DDE1A87002DCA7B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */; };
+		D4E974C91DDE730F002DCA7B /* Pin+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E974C81DDE730F002DCA7B /* Pin+Extension.swift */; };
+		D4E974CB1DDE7476002DCA7B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E974CA1DDE7476002DCA7B /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D4A506281DDA37D60049E4C6 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		D4E974C51DDE1A87002DCA7B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		D4E974C81DDE730F002DCA7B /* Pin+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pin+Extension.swift"; sourceTree = "<group>"; };
+		D4E974CA1DDE7476002DCA7B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +72,19 @@
 				D4A5061F1DDA206F0049E4C6 /* LaunchScreen.storyboard */,
 				D4A506221DDA206F0049E4C6 /* Info.plist */,
 				D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */,
-				D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */,
+				D4E974C71DDE72FA002DCA7B /* DataStack */,
 			);
 			path = "udacity-virtual-tourist";
+			sourceTree = "<group>";
+		};
+		D4E974C71DDE72FA002DCA7B /* DataStack */ = {
+			isa = PBXGroup;
+			children = (
+				D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */,
+				D4E974C81DDE730F002DCA7B /* Pin+Extension.swift */,
+				D4E974CA1DDE7476002DCA7B /* DataController.swift */,
+			);
+			name = DataStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A506191DDA206F0049E4C6 /* PinsMapViewController.swift in Sources */,
+				D4E974CB1DDE7476002DCA7B /* DataController.swift in Sources */,
 				D4E974C61DDE1A87002DCA7B /* DataModel.xcdatamodeld in Sources */,
 				D4A506171DDA206F0049E4C6 /* AppDelegate.swift in Sources */,
 				D4A5062B1DDA58980049E4C6 /* PhotoAlbumViewController.swift in Sources */,
+				D4E974C91DDE730F002DCA7B /* Pin+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
