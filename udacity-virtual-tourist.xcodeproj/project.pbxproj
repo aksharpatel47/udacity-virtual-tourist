@@ -14,6 +14,7 @@
 		D4A506211DDA206F0049E4C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A5061F1DDA206F0049E4C6 /* LaunchScreen.storyboard */; };
 		D4A506291DDA37D60049E4C6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D4A506281DDA37D60049E4C6 /* .gitignore */; };
 		D4A5062B1DDA58980049E4C6 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */; };
+		D4E974C61DDE1A87002DCA7B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D4A506221DDA206F0049E4C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4A506281DDA37D60049E4C6 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		D4E974C51DDE1A87002DCA7B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D4A5061F1DDA206F0049E4C6 /* LaunchScreen.storyboard */,
 				D4A506221DDA206F0049E4C6 /* Info.plist */,
 				D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */,
+				D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */,
 			);
 			path = "udacity-virtual-tourist";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A506191DDA206F0049E4C6 /* PinsMapViewController.swift in Sources */,
+				D4E974C61DDE1A87002DCA7B /* DataModel.xcdatamodeld in Sources */,
 				D4A506171DDA206F0049E4C6 /* AppDelegate.swift in Sources */,
 				D4A5062B1DDA58980049E4C6 /* PhotoAlbumViewController.swift in Sources */,
 			);
@@ -310,8 +314,22 @@
 				D4A506271DDA206F0049E4C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4E974C51DDE1A87002DCA7B /* DataModel.xcdatamodel */,
+			);
+			currentVersion = D4E974C51DDE1A87002DCA7B /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D4A5060B1DDA206F0049E4C6 /* Project object */;
 }
