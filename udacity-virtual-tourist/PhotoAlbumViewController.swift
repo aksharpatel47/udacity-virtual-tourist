@@ -52,12 +52,21 @@ class PhotoAlbumViewController: UIViewController {
     FlickrClient.shared.searchPhotos(for: pin, completionHandler: {
       urlPaths, error in
       
-      guard let urlPaths = urlPaths, error == nil else {
-        return
-      }
-      
       DispatchQueue.main.async {
         self.title = nil
+      }
+      
+      guard let urlPaths = urlPaths, error == nil else {
+        
+        let msg = "Error while getting new photos. Please try again."
+        
+        DispatchQueue.main.async {
+          let alertCtrl = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+          alertCtrl.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+          self.present(alertCtrl, animated: true, completion: nil)
+        }
+        
+        return
       }
       
       DataController.shared.addPhotos(from: urlPaths, belongingTo: self.pin)
