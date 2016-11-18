@@ -56,7 +56,7 @@ class PinsMapViewController: UIViewController {
     }
     
     if identifier == Constants.Segues.showPinDetail {
-      guard let pinDetailVC = segue.destination as? PhotoAlbumViewController,
+      guard let pinDetailVC = segue.destination as? PinDetailViewController,
         let pin = sender as? Pin else {
           return
       }

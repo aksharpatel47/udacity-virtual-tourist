@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
-        <!--Photo Album View Controller-->
+        <!--Pin Detail View Controller-->
         <scene sceneID="IvX-pu-7jc">
             <objects>
-                <viewController id="yXH-3T-ftF" customClass="PhotoAlbumViewController" customModule="udacity_virtual_tourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yXH-3T-ftF" customClass="PinDetailViewController" customModule="udacity_virtual_tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yvs-80-hy2"/>
                         <viewControllerLayoutGuide type="bottom" id="IJl-9Y-lSQ"/>

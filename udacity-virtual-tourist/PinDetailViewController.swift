@@ -1,5 +1,5 @@
 //
-//  PhotoAlbumViewController.swift
+//  PinDetailViewController.swift
 //  udacity-virtual-tourist
 //
 //  Created by Akshar Patel on 15/11/16.
@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreData
 
-class PhotoAlbumViewController: UIViewController {
+class PinDetailViewController: UIViewController {
   
   //MARK: Properties
   var pin: Pin!
@@ -75,7 +75,7 @@ class PhotoAlbumViewController: UIViewController {
 }
 
 //MARK: - NSFetchResultsController Execute Search
-extension PhotoAlbumViewController {
+extension PinDetailViewController {
   func executeSearch() {
     guard let fc = fetchResultsController else {
       return
@@ -95,7 +95,7 @@ extension PhotoAlbumViewController {
 }
 
 //MARK: - Collection View Delegate
-extension PhotoAlbumViewController: UICollectionViewDelegate {
+extension PinDetailViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let photo = fetchResultsController?.object(at: indexPath) else {
       return
@@ -106,7 +106,7 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
 }
 
 //MARK: - Collection View Datasource
-extension PhotoAlbumViewController: UICollectionViewDataSource {
+extension PinDetailViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     guard let fc = fetchResultsController,
       let count = fc.sections?.first?.numberOfObjects else {
@@ -134,7 +134,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
 }
 
 //MARK: - NSFetchResultsController Delegate
-extension PhotoAlbumViewController: NSFetchedResultsControllerDelegate {
+extension PinDetailViewController: NSFetchedResultsControllerDelegate {
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
     switch type {
     case .insert:
