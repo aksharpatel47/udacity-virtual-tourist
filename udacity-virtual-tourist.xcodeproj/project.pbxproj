@@ -58,6 +58,7 @@
 		65C6D8501DDEEB3900777460 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D4E974C71DDE72FA002DCA7B /* DataStack */,
 				65C6D8511DDEEB4500777460 /* Flickr */,
 			);
 			name = Models;
@@ -101,7 +102,6 @@
 				D4A5061F1DDA206F0049E4C6 /* LaunchScreen.storyboard */,
 				D4A506221DDA206F0049E4C6 /* Info.plist */,
 				D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */,
-				D4E974C71DDE72FA002DCA7B /* DataStack */,
 				D4E974CC1DDE7C60002DCA7B /* Constants.swift */,
 				65C6D8501DDEEB3900777460 /* Models */,
 			);
