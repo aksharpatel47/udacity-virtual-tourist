@@ -42,7 +42,7 @@
                     <navigationItem key="navigationItem" id="vtQ-ZN-kbB"/>
                     <connections>
                         <outlet property="pinsMapView" destination="nLM-ag-Blc" id="xxo-p2-yY0"/>
-                        <segue destination="yXH-3T-ftF" kind="show" identifier="openPhotoAlbum" id="FRD-9v-a3c"/>
+                        <segue destination="yXH-3T-ftF" kind="show" identifier="showPinDetail" id="FRD-9v-a3c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Album View Controller-->
         <scene sceneID="IvX-pu-7jc">
             <objects>
-                <viewController id="yXH-3T-ftF" sceneMemberID="viewController">
+                <viewController id="yXH-3T-ftF" customClass="PhotoAlbumViewController" customModule="udacity_virtual_tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yvs-80-hy2"/>
                         <viewControllerLayoutGuide type="bottom" id="IJl-9Y-lSQ"/>
@@ -106,6 +106,10 @@
                             <constraint firstAttribute="trailing" secondItem="v7e-c4-ldl" secondAttribute="trailing" id="v9d-hJ-Eze"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="qdM-M7-t9J" id="K9P-je-cFj"/>
+                        <outlet property="photoCollectionView" destination="v7e-c4-ldl" id="xaa-de-vJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Q7-dq-6m7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

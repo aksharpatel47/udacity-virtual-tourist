@@ -48,6 +48,23 @@ class PinsMapViewController: UIViewController {
       pinsMapView.addAnnotation(pin)
     }
   }
+  
+  //MARK: Navigation Methods
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let identifier = segue.identifier else {
+      return
+    }
+    
+    if identifier == Constants.Segues.showPinDetail {
+      guard let pinDetailVC = segue.destination as? PhotoAlbumViewController,
+        let pin = sender as? Pin else {
+          return
+      }
+      
+      pinDetailVC.pin = pin
+      pinDetailVC.camera = MKMapCamera(lookingAtCenter: pin.coordinate, fromEyeCoordinate: pin.coordinate, eyeAltitude: pinsMapView.camera.altitude)
+    }
+  }
 }
 
 //MARK: - MKMapView Delegate
@@ -58,6 +75,16 @@ extension PinsMapViewController: MKMapViewDelegate {
     return pinView
   }
   
+  // Open pin detail when a pin is selected
+  func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    guard let pin = view.annotation as? Pin else {
+      return
+    }
+    
+    performSegue(withIdentifier: Constants.Segues.showPinDetail, sender: pin)
+  }
+  
+  // Persist MapView's last seen position
   func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     let cameraData = NSKeyedArchiver.archivedData(withRootObject: mapView.camera)
     UserDefaults.standard.set(cameraData, forKey: Constants.OfflineKeys.mapCamera)

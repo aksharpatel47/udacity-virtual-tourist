@@ -14,4 +14,7 @@ struct Constants {
     static let mapCamera = "mapCamera"
   }
   
+  struct Segues {
+    static let showPinDetail = "showPinDetail"
+  }
 }

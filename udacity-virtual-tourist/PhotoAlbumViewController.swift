@@ -11,11 +11,17 @@ import MapKit
 
 class PhotoAlbumViewController: UIViewController {
   
+  var pin: Pin!
+  var camera: MKMapCamera!
+  
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var photoCollectionView: UICollectionView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    mapView.setCamera(camera, animated: false)
+    mapView.addAnnotation(pin)
   }
 }
 
