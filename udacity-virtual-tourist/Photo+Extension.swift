@@ -20,4 +20,18 @@ extension Photo {
       fatalError("Error while creating Photo Entity")
     }
   }
+  
+  func downloadData() {
+    DataController.shared.performBackgroundBatchOperation {
+      backgroundContext in
+      
+      guard let urlPath = self.urlPath,
+        let url = URL(string: urlPath) else {
+        return
+      }
+      
+      self.data = try? Data(contentsOf: url) as NSData
+      
+    }
+  }
 }
