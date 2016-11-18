@@ -9,8 +9,13 @@
 import UIKit
 import MapKit
 
+fileprivate let pinIdentifier = "mapPinView"
+
 class PinsMapViewController: UIViewController {
 
+  //MARK: Properties
+  let context = DataController.shared.managedObjectContext
+  
   //MARK: Outlets
   @IBOutlet weak var pinsMapView: MKMapView!
   
@@ -20,14 +25,21 @@ class PinsMapViewController: UIViewController {
   }
   
   //MARK: Actions
-  @IBAction func longPressedAction(_ sender: UILongPressGestureRecognizer) {
+  @IBAction func dropPinOnMap(_ sender: UILongPressGestureRecognizer) {
     if sender.state == .began {
-      print("Long Pressed")
+      let dropPoint = sender.location(in: pinsMapView)
+      let dropCoordinate = pinsMapView.convert(dropPoint, toCoordinateFrom: pinsMapView)
+      let pin = Pin(coordinate: dropCoordinate, context: context)
+      pinsMapView.addAnnotation(pin)
     }
   }
 }
 
 //MARK: - MKMapView Delegate
 extension PinsMapViewController: MKMapViewDelegate {
-  
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
+    pinView.animatesDrop = true
+    return pinView
+  }
 }
