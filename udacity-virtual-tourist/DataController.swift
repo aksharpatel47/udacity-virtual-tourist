@@ -43,3 +43,15 @@ class DataController {
     }
   }
 }
+
+extension DataController {
+  func saveChanges() {
+    if managedObjectContext.hasChanges {
+      do {
+        try managedObjectContext.save()
+      } catch {
+        print("Error while saving the changes present in the context. \(error)")
+      }
+    }
+  }
+}

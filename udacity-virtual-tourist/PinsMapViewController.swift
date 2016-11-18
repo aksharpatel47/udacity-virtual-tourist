@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 fileprivate let pinIdentifier = "mapPinView"
 
@@ -23,9 +24,18 @@ class PinsMapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Set Map Camera to its last persisted position
     if let cameraData = UserDefaults.standard.data(forKey: Constants.OfflineKeys.mapCamera),
       let camera = NSKeyedUnarchiver.unarchiveObject(with: cameraData) as? MKMapCamera {
       pinsMapView.setCamera(camera, animated: false)
+    }
+    
+    // Load existing Pins from Core Data
+    
+    let fr = NSFetchRequest<Pin>(entityName: "Pin")
+    
+    if let pins = try? context.fetch(fr) {
+      pinsMapView.addAnnotations(pins)
     }
   }
   
