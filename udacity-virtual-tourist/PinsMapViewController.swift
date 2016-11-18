@@ -22,6 +22,11 @@ class PinsMapViewController: UIViewController {
   //MARK: Lifecycle methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    if let cameraData = UserDefaults.standard.data(forKey: Constants.OfflineKeys.mapCamera),
+      let camera = NSKeyedUnarchiver.unarchiveObject(with: cameraData) as? MKMapCamera {
+      pinsMapView.setCamera(camera, animated: false)
+    }
   }
   
   //MARK: Actions
@@ -41,5 +46,10 @@ extension PinsMapViewController: MKMapViewDelegate {
     let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
     pinView.animatesDrop = true
     return pinView
+  }
+  
+  func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    let cameraData = NSKeyedArchiver.archivedData(withRootObject: mapView.camera)
+    UserDefaults.standard.set(cameraData, forKey: Constants.OfflineKeys.mapCamera)
   }
 }

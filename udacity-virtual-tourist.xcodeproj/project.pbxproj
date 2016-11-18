@@ -17,6 +17,7 @@
 		D4E974C61DDE1A87002DCA7B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4E974C41DDE1A87002DCA7B /* DataModel.xcdatamodeld */; };
 		D4E974C91DDE730F002DCA7B /* Pin+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E974C81DDE730F002DCA7B /* Pin+Extension.swift */; };
 		D4E974CB1DDE7476002DCA7B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E974CA1DDE7476002DCA7B /* DataController.swift */; };
+		D4E974CD1DDE7C60002DCA7B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E974CC1DDE7C60002DCA7B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D4E974C51DDE1A87002DCA7B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		D4E974C81DDE730F002DCA7B /* Pin+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pin+Extension.swift"; sourceTree = "<group>"; };
 		D4E974CA1DDE7476002DCA7B /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D4E974CC1DDE7C60002DCA7B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				D4A506221DDA206F0049E4C6 /* Info.plist */,
 				D4A5062A1DDA58980049E4C6 /* PhotoAlbumViewController.swift */,
 				D4E974C71DDE72FA002DCA7B /* DataStack */,
+				D4E974CC1DDE7C60002DCA7B /* Constants.swift */,
 			);
 			path = "udacity-virtual-tourist";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				D4E974CB1DDE7476002DCA7B /* DataController.swift in Sources */,
 				D4E974C61DDE1A87002DCA7B /* DataModel.xcdatamodeld in Sources */,
 				D4A506171DDA206F0049E4C6 /* AppDelegate.swift in Sources */,
+				D4E974CD1DDE7C60002DCA7B /* Constants.swift in Sources */,
 				D4A5062B1DDA58980049E4C6 /* PhotoAlbumViewController.swift in Sources */,
 				D4E974C91DDE730F002DCA7B /* Pin+Extension.swift in Sources */,
 			);
