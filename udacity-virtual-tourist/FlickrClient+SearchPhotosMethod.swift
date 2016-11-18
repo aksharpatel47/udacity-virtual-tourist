@@ -9,7 +9,7 @@
 import Foundation
 
 extension FlickrClient {
-  func searchPhotos(for pin: Pin, completionHandler: @escaping ((Any?, Error?) -> Void)) {
+  func searchPhotos(for pin: Pin, completionHandler: @escaping (([String]?, Error?) -> Void)) {
     let queryParams: [String:Any] = [
       FConstants.QueryParamKeys.latitude: pin.latitude,
       FConstants.QueryParamKeys.longitude: pin.longitude,
@@ -22,7 +22,7 @@ extension FlickrClient {
       data, error in
       
       guard let jsonData = data, error == nil else {
-        completionHandler(data, error)
+        completionHandler(nil, error)
         return
       }
       
@@ -39,6 +39,7 @@ extension FlickrClient {
       
       
       let urls = photosArray.map({ $0[FConstants.QueryParamValues.extraURLM] as! String })
+      completionHandler(urls, nil)
     })
   }
 }
