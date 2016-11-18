@@ -126,6 +126,13 @@
                             <constraint firstAttribute="trailing" secondItem="v7e-c4-ldl" secondAttribute="trailing" id="v9d-hJ-Eze"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eJe-aW-6dL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="hOS-31-5MC">
+                            <connections>
+                                <action selector="getPhotos:" destination="yXH-3T-ftF" id="oJb-ic-Fhf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qdM-M7-t9J" id="K9P-je-cFj"/>
                         <outlet property="photoCollectionView" destination="v7e-c4-ldl" id="xaa-de-vJW"/>

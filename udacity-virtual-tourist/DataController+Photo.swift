@@ -26,4 +26,21 @@ extension DataController {
       }
     }
   }
+  
+  func removeAllPhotos(for pin: Pin) {
+    let pinObjectID = pin.objectID
+    
+    performBackgroundBatchOperation {
+      backgroundContext in
+      
+      guard let pinInBGContext = backgroundContext.object(with: pinObjectID) as? Pin,
+        let photos = pinInBGContext.photos?.allObjects as? [Photo] else {
+        return
+      }
+      
+      for photo in photos {
+        backgroundContext.delete(photo)
+      }
+    }
+  }
 }

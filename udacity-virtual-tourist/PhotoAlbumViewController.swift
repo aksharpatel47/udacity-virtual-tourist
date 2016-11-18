@@ -44,8 +44,11 @@ class PhotoAlbumViewController: UIViewController {
   }
   
   //MARK: Actions
-  @IBAction func getPhotos(_ sender: Any) {
+  @IBAction func getPhotos(_ sender: AnyObject) {
     title = "Getting New Photos..."
+    
+    DataController.shared.removeAllPhotos(for: pin)
+    
     FlickrClient.shared.searchPhotos(for: pin, completionHandler: {
       urlPaths, error in
       
