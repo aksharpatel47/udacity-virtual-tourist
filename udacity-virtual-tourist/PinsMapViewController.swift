@@ -81,6 +81,8 @@ extension PinsMapViewController: MKMapViewDelegate {
       return
     }
     
+    mapView.deselectAnnotation(pin, animated: false)
+    
     performSegue(withIdentifier: Constants.Segues.showPinDetail, sender: pin)
   }
   
