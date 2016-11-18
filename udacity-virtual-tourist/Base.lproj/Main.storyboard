@@ -79,13 +79,33 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Iv-hM-4GT">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="8Iv-hM-4GT" customClass="PhotoCollectionViewCell" customModule="udacity_virtual_tourist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gM2-vA-ijI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="X6C-bs-kmo">
+                                                    <rect key="frame" x="40" y="39.5" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="gM2-vA-ijI" firstAttribute="leading" secondItem="8Iv-hM-4GT" secondAttribute="leading" id="DpB-pb-ebX"/>
+                                            <constraint firstItem="gM2-vA-ijI" firstAttribute="top" secondItem="8Iv-hM-4GT" secondAttribute="top" id="GZU-l2-zqC"/>
+                                            <constraint firstItem="X6C-bs-kmo" firstAttribute="centerY" secondItem="8Iv-hM-4GT" secondAttribute="centerY" id="MXg-BI-dOB"/>
+                                            <constraint firstItem="X6C-bs-kmo" firstAttribute="centerX" secondItem="8Iv-hM-4GT" secondAttribute="centerX" id="YFP-w2-dN9"/>
+                                            <constraint firstAttribute="trailing" secondItem="gM2-vA-ijI" secondAttribute="trailing" id="l02-dd-CYL"/>
+                                            <constraint firstAttribute="bottom" secondItem="gM2-vA-ijI" secondAttribute="bottom" id="xxc-hZ-X5q"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="X6C-bs-kmo" id="Ug4-e0-hcM"/>
+                                            <outlet property="imageView" destination="gM2-vA-ijI" id="HE4-P4-ZY1"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
