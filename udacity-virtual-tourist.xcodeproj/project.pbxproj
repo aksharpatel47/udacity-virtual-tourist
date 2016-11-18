@@ -335,6 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
 				INFOPLIST_FILE = "udacity-virtual-tourist/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-virtual-tourist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
 				INFOPLIST_FILE = "udacity-virtual-tourist/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-virtual-tourist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
