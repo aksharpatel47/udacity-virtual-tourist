@@ -16,6 +16,7 @@ class PhotoAlbumViewController: UIViewController {
   var pin: Pin!
   var camera: MKMapCamera!
   var blockOperations = [BlockOperation]()
+  var context = DataController.shared.managedObjectContext
   var fetchResultsController: NSFetchedResultsController<Photo>? {
     didSet {
       fetchResultsController?.delegate = self
@@ -39,7 +40,7 @@ class PhotoAlbumViewController: UIViewController {
     fr.sortDescriptors = [NSSortDescriptor(key: "urlPath", ascending: true)]
     fr.predicate = NSPredicate(format: "pin = %@", pin)
     
-    fetchResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: DataController.shared.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+    fetchResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
   }
   
   //MARK: Actions
@@ -84,7 +85,11 @@ extension PhotoAlbumViewController {
 //MARK: - Collection View Delegate
 extension PhotoAlbumViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let photo = fetchResultsController?.object(at: indexPath) else {
+      return
+    }
     
+    context.delete(photo)
   }
 }
 
